@@ -1,0 +1,13 @@
+---
+all:
+  children:
+    NETWORK:
+      children:
+        Edges:
+          hosts:
+            Edge1:
+            Edge2:
+        Core:
+          hosts:
+            Core1:
+            Core2:

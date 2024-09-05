@@ -1,0 +1,9 @@
+---
+- name: Build config
+  hosts: NETWORK
+  connection: local
+  gather_facts: false
+  tasks:
+    - name: Generate intended config and documentation
+      ansible.builtin.import_role:
+        name: arista.avd.eos_cli_config_gen

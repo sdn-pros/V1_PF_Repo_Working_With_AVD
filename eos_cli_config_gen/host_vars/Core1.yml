@@ -1,0 +1,31 @@
+hostname: Core1
+ip_routing: true
+loopback_interfaces:
+  - name: Loopback0
+    ip_address: 11.11.11.11/32
+ethernet_interfaces:
+- name: Ethernet1
+  type: routed
+  mtu: 1500
+  ip_address: 10.220.0.1/30
+  ospf_area: 0
+  ospf_network_point_to_point: yes
+
+
+- name: Ethernet2
+  type: routed
+  mtu: 1500
+  ip_address: 10.220.0.5/30
+  ospf_area: 0
+  ospf_network_point_to_point: yes
+- name: Ethernet3
+  type: routed
+  mtu: 1500
+  ip_address: 10.220.0.9/30
+  ospf_area: 0
+  ospf_network_point_to_point: yes
+
+router_ospf:
+  process_ids:
+    - id: 10
+      router_id: 11.11.11.11
