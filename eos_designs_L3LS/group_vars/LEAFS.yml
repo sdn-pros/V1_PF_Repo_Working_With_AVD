@@ -1,0 +1,14 @@
+port_profiles:
+  - profile: ESXi_STD
+    mode: trunk
+    vlans: 10, 20, 30, 40, 50
+    port_channel:
+      mode: active
+  - profile: INFRA
+    mode: trunk 
+    vlans: 100, 200, 300, 400
+    port_channel:
+      mode: active
+  - profile: K8_STD
+    mode: trunk
+    vlans: 55, 56, 57, 2050

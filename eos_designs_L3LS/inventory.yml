@@ -1,59 +1,108 @@
 ---
 all:
   children:
-    CVP_cluster:
-      hosts: 
-        cvp1: 
-          ansible_httpapi_host: 192.168.0.5
-          ansible_host: 192.168.0.5
-          ansible_user: arista
-          ansible_password: arista1234
-          ansible_connection: httpapi
-          ansible_httpapi_use_ssl: True
-          ansible_httpapi_validate_certs: False
-          ansible_network_os: eos
-          ansible_httpapi_port: 443
     FABRIC:
       vars:
-        ansible_user: arista
-        ansible_ssh_pass: arista1234 # If using SSH keys, this can be removed
-# Use this section if you want to perform testing via the eAPI
-        # ansible_connection: httpapi
-        # ansible_httpapi_use_ssl: True
-        # ansible_httpapi_validate_certs: False
-        # ansible_network_os: eos
-        # ansible_httpapi_port: 443
-# Use this section if you want to perform testing via the CLI through SSH
-        ansible_connection: network_cli
+        ansible_user: admin
+        ansible_ssh_pass: admin # If using SSH keys, this can be removed
+        ansible_connection: httpapi
+        ansible_httpapi_use_ssl: True
+        ansible_httpapi_validate_certs: False
         ansible_network_os: eos
-        # ansible_become: yes
-        # ansible_become_method: enable
+        ansible_httpapi_port: 443
+        ansible_become: yes
+        ansible_become_method: enable
       children:
         SPINES:
           vars:
             type: spine
           hosts:
-            spine1:
-              ansible_host: 192.168.0.11
-            spine2:
-              ansible_host: 192.168.0.12
-            spine3:
-              ansible_host: 192.168.0.13
+            spine[1:3]:
         LEAFS:
           vars: 
             type: l3leaf
-          hosts:
-            leaf1:
-              ansible_host: 192.168.0.21
-            leaf2:
-              ansible_host: 192.168.0.22
-            leaf3:
-              ansible_host: 192.168.0.23
-            leaf4:
-              ansible_host: 192.168.0.24
-    EVPN_SERVICES:
-      children:
-        LEAFS:
-    ENDPOINT_CONNECT:
-      children:
-        LEAFS:
+          children:
+            RACK_1:
+              hosts:
+                leaf[1:2]:
+            RACK_2:
+              hosts:
+                leaf[3:4]:
+            RACK_3:
+              hosts:
+                leaf[5:6]:
+            RACK_4:
+              hosts:
+                leaf[7:8]:
+            RACK_5:
+              hosts:
+                leaf[9:10]:
+            RACK_6:
+              hosts:
+                leaf[11:12]:
+            RACK_7:
+              hosts:
+                leaf[13:14]:
+            RACK_8:
+              hosts:
+                leaf[15:16]:
+            RACK_9:
+              hosts:
+                leaf[17:18]:
+            RACK_10:
+              hosts:
+                leaf[19:20]:
+            RACK_11:
+              hosts:
+                leaf[21:22]:
+            RACK_12:
+              hosts:
+                leaf[23:24]:
+            RACK_13:
+              hosts:
+                leaf[25:26]:
+            RACK_14:
+              hosts:
+                leaf[27:28]:
+            RACK_15:
+              hosts:
+                leaf[29:30]:
+            RACK_16:
+              hosts:
+                leaf[31:32]:
+            RACK_17:
+              hosts:
+                leaf[33:34]:
+            RACK_18:
+              hosts:
+                leaf[35:36]:
+            RACK_19:
+              hosts:
+                leaf[37:38]:
+            RACK_20:
+              hosts:
+                leaf[39:40]:
+            RACK_21:
+              hosts:
+                leaf[41:42]:
+            RACK_22:
+              hosts:
+                leaf[43:44]:
+            RACK_23:
+              hosts:
+                leaf[45:46]:
+            RACK_24:
+              hosts:
+                leaf[47:48]:
+            RACK_25:
+              hosts:
+                leaf[49:50]:
+            RACK_BL_1:
+              hosts:  
+                borderleaf[1:2]:
+        EVPN_SERVICES:
+          children:
+            LEAFS:
+        ENDPOINT_CONNECT:
+          children:
+            LEAFS:

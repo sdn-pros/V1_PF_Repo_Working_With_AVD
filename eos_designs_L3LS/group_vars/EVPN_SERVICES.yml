@@ -2,12 +2,65 @@
 tenants:
   - name: ACME
     mac_vrf_vni_base: 10000
+    redistribute_mlag_ibgp_peering_vrfs: false
+    l2vlans:
+      - id: 55
+        name: VLAN_55
+      - id: 56
+        name: VLAN_56
+      - id: 57
+        name: VLAN_57
+      - id: 2050
+        name: VLAN_2050   
     vrfs:
       - name: VRF_A
         vrf_vni: 10
         svis:
           - id: 10
-            # SVI Description
             name: DMZ
             enabled: true
             ip_address_virtual: 10.1.10.1/24
+          - id: 20
+            name: Internal
+            enabled: true
+            ip_address_virtual: 10.1.20.1/24
+          - id: 30
+            name: Dev
+            enabled: true
+            ip_address_virtual: 10.1.30.1/24
+          - id: 40
+            name: QA
+            enabled: true
+            ip_address_virtual: 10.1.40.1/24
+          - id: 50
+            name: Guest
+            enabled: true
+            ip_address_virtual: 10.1.50.1/24
+          - id: 100
+            name: VLAN_100
+            enabled: true
+            ip_address_virtual: 10.1.100.1/24
+          - id: 200
+            name: VLAN_200
+            enabled: true
+            ip_address_virtual: 10.1.200.1/24
+          - id: 300
+            name: VLAN_300
+            enabled: true
+            ip_address_virtual: 10.1.31.1/24
+          - id: 400
+            name: VLAN_400
+            enabled: true
+            ip_address_virtual: 10.1.41.1/24     
+        l3_interfaces:
+          - interfaces: [Ethernet6, Ethernet6]
+            ip_addresses: [10.1.5.0/31, 10.1.5.2/31]
+            nodes: [borderleaf1, borderleaf2]
+            enabled: True 
+        bgp_peers:
+          - ip_address: 10.1.5.1
+            remote_as: 1
+            nodes: [borderleaf1]
+          - ip_address: 10.1.5.3
+            remote_as: 1
+            nodes: [borderleaf2]

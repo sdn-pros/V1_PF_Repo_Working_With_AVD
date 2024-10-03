@@ -1,0 +1,74 @@
+network_ports:
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet7, Ethernet7]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet8, Ethernet8]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet9, Ethernet9]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet10, Ethernet10]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet11, Ethernet11]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet12, Ethernet12]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet13, Ethernet13]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet14, Ethernet14]
+    profile: ESXi_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet15, Ethernet15]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet16, Ethernet16]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet17, Ethernet17]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet18, Ethernet18]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet19, Ethernet19]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet20, Ethernet20]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet21, Ethernet21]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet22, Ethernet22]
+    profile: INFRA
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet23, Ethernet23]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet24, Ethernet24]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet25, Ethernet25]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet26, Ethernet26]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet27, Ethernet27]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet28, Ethernet28]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet29, Ethernet29]
+    profile: K8_STD
+  - switches: [leaf5, leaf6]
+    switch_ports: [Ethernet30, Ethernet30]
+    profile: K8_STD
+
